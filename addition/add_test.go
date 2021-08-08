@@ -7,13 +7,13 @@ import (
 )
 
 func TestAdd(t *testing.T) {
-	_, actualErr := addition.Add(2, 3)
+	actualAns, actualErr := addition.Add(2, 3)
 	if actualErr.Error() != fmt.Errorf("kurang dari 10").Error() {
 		t.Errorf("got actualErr %+v, expected %v ", actualErr, fmt.Errorf("kurang dari 10"))
 	}
-	//if actualAns != 0 {
-	//	t.Errorf("it returns actualAns, supposed to be error")
-	//}
+	if actualAns != 0 {
+		t.Errorf("it returns actualAns, supposed to be error")
+	}
 }
 
 func TestAddSuccess(t *testing.T) {
